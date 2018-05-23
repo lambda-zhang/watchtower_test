@@ -18,6 +18,8 @@ jobs:
           ps aux
           cat /build.sh
           echo $BASH_ENV
+          ls /go -la
+          du -sh /go
           tar -czmPf /src/dist/go.tzg /go
           if [ "$CIRCLE_TAG" != "" ] ; then /src/dockerfile/push_containers.sh $CIRCLE_TAG; fi;
 
